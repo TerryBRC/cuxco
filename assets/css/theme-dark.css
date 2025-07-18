@@ -1,0 +1,23 @@
+body {
+    background-color: #101010;
+    color: #e0e0e0;
+}
+
+header {
+    background-color: #181818;
+}
+
+form input, form select {
+    background-color: #111;
+    color: #0ff;
+}
+
+form button {
+    background-color: #0ff;
+    color: #000;
+}
+
+table th {
+    background-color: #202020;
+    color: #00ffff;
+}
