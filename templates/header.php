@@ -4,8 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Cuxco - <?php echo $title ?? ''; ?></title>
-    <link rel="stylesheet" href="../../assets/css/style.css">
-    <link rel="stylesheet" href="../../assets/css/theme-dark.css">
+    <link id="theme-stylesheet" rel="stylesheet" href="../../assets/css/style.css"> <!-- Hoja de estilo por defecto -->
 </head>
 <body>
     <header>
@@ -19,6 +18,7 @@
                 <span></span>
                 Clientes Atrasados
             </a>
+            <button id="toggle-theme">Modo Oscuro</button> <!-- Botón para cambiar de tema -->
         </nav>
     </header>
     <main>

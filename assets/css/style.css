@@ -1,168 +1,4 @@
-/* crea los estilos para los archivos de public*/
-/*body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 0;
-}
-h1, h2, h3 {
-    color: #333;
-}
-p {
-    line-height: 1.6;
-    color: #555;
-}
-a {
-    color: #3498db;
-    text-decoration: none;
-}
-a:hover {
-    text-decoration: underline;
-}
-/* Estilos para el encabezado *
-header {
-    background: #35424a;
-    color: #ffffff;
-    padding: 20px 0;
-    text-align: center;
-}
-/* Estilos para el contenido principal *
-main {
-    padding: 20px;
-    max-width: 800px;
-    margin: auto;
-    background: #ffffff;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-/* Estilos para el pie de página 
-footer {
-    background: #35424a;
-    color: #ffffff;
-    text-align: center;
-    padding: 10px 0;
-    position: relative;
-    bottom: 0;
-    width: 100%;
-}
-/* Estilos para botones 
-button {
-    background-color: #3498db;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    cursor: pointer;
-    border-radius: 5px;
-}
-button:hover {
-    background-color: #2980b9;
-}
-/* Estilos para formularios 
-form {
-    display: flex;
-    flex-direction: column;
-    margin: 20px 0;
-}
-input, textarea {
-    padding: 10px;
-    margin: 5px 0;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-input[type="submit"] {
-    background-color: #3498db;
-    color: white;
-    border: none;
-    cursor: pointer;
-}
-input[type="submit"]:hover {
-    background-color: #2980b9;
-}
-/* Estilos para tablas 
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 20px 0;
-}
-th, td {
-    border: 1px solid #ddd;
-    padding: 8px;
-    text-align: left;
-}
-th {
-    background-color: #f2f2f2;
-}
-/* Estilos para listas 
-ul, ol {
-    padding-left: 20px;
-}
-li {
-    margin: 5px 0;
-}
-/* Responsive design 
-@media (max-width: 600px) {
-    body {
-        padding: 10px;
-    }
-    main {
-        padding: 15px;
-    }
-    header, footer {
-        text-align: center;
-    }
-    button {
-        width: 100%;
-        margin-top: 10px;
-    }
-}
-/* Estilos para mensajes de alerta 
-.alert {
-    padding: 15px;
-    background-color: #f44336;
-    color: white;
-    margin-bottom: 20px;
-    border-radius: 5px;
-}
-/* Estilos para mensajes de éxito 
-.success {
-    padding: 15px;
-    background-color: #4CAF50;
-    color: white;
-    margin-bottom: 20px;
-    border-radius: 5px;
-}
-/* Estilos para mensajes de información 
-.info {
-    padding: 15px;
-    background-color: #2196F3;
-    color: white;
-    margin-bottom: 20px;
-    border-radius: 5px;
-}
-/* Estilos para mensajes de advertencia 
-.warning {
-    padding: 15px;
-    background-color: #ff9800;
-    color: white;
-    margin-bottom: 20px;
-    border-radius: 5px;
-}
-/* Estilos para tarjetas 
-.card {
-    background: #ffffff;
-    padding: 20px;
-    margin: 10px 0;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-/* Estilos para iconos 
-.icon {
-    width: 24px;
-    height: 24px;
-    display: inline-block;
-    background-size: cover;
-    margin-right: 5px;
-}
-*/
+/* crea los estilos para los archivos de public */
 * {
     box-sizing: border-box;
     font-family: 'Segoe UI', sans-serif;
@@ -171,109 +7,143 @@ li {
 body {
     margin: 0;
     padding: 0;
-    background-color: #121212;
-    color: #ffffff;
+    background-color: #ffffff; /* Cambiado a blanco */
+    color: #000000; /* Cambiado a negro */
 }
 
 header {
     display: flex;
-    background-color: #1f1f1f;
-    border-bottom: 2px solid #2a2a2a;
+    background-color: #f0f0f0; /* Cambiado a un gris claro */
+    border-bottom: 2px solid #cccccc; /* Cambiado a un gris más claro */
     align-items: center;
 }
 
 header h1 {
     align-items: center;
     margin: 0;
-    color: #00f0ff;
+    color: #007acc; /* Cambiado a un azul más claro */
 }
+
 header img {
     width: 50px;
     height: auto;
     margin-right: 1rem;
 }
+
 header nav {
     display: flex;
     flex-grow: 1;
     justify-content: flex-end;
     padding: 1rem;
 }
+header nav button{
+    padding: 8px 16px;
+    background-color: #007acc;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 20px;
+    transition: background-color 0.3s;
+}
+header nav button:hover {
+    background-color: #005f99;
+}
 nav a {
     position: relative;
     padding: 5px;
-    color: #03e9f4;
+    color: #007acc; /* Cambiado a un azul más claro */
     text-decoration: none;
     text-transform: uppercase;
-    transition: 0.5s; letter-spacing: 4px;
-    overflow: hidden; margin-right: 50px;
-}
-nav a:hover{
-    background: #03e9f4; color: #050801;
+    transition: 0.5s; 
+    letter-spacing: 4px;
+    overflow: hidden; 
+    margin-right: 50px;
 }
 
-nav a span{
+nav a:hover {
+    background: #007acc; /* Cambiado a un azul más claro */
+    color: #ffffff; /* Cambiado a blanco */
+}
+
+nav a span {
     position: absolute;
     display: block;
 }
 
-nav a span:nth-child(1){
+nav a span:nth-child(1) {
     top: 0;
     left: 0;
     width: 100%;
     height: 2px;
-    background: linear-gradient(90deg,transparent,#03e9f4);
+    background: linear-gradient(90deg, transparent, #007acc); /* Cambiado a un azul más claro */
     animation: animate1 1s linear infinite;
 }
-@keyframes animate1{
-    0%{
+
+@keyframes animate1 {
+    0% {
         left: -100%;
     }
-    50%,100%{
+    50%, 100% {
         left: 100%;
     }
 }
-nav a span:nth-child(2){
-    top: -100%; right: 0;
-    width: 2px; height: 100%;
-    background: linear-gradient(180deg,transparent,#03e9f4);
+
+nav a span:nth-child(2) {
+    top: -100%; 
+    right: 0;
+    width: 2px; 
+    height: 100%;
+    background: linear-gradient(180deg, transparent, #007acc); /* Cambiado a un azul más claro */
     animation: animate2 1s linear infinite;
     animation-delay: 0.25s;
 }
 
-@keyframes animate2{
-    0%{ top: -100%; }
-    50%,100%{ top: 100%; }
+@keyframes animate2 {
+    0% { 
+        top: -100%; 
+    }
+    50%, 100% { 
+        top: 100%; 
+    }
 }
-nav a span:nth-child(3){
+
+nav a span:nth-child(3) {
     bottom: 0;
     right: 0;
     width: 100%;
     height: 2px;
-    background: linear-gradient(270deg,transparent,#03e9f4);
+    background: linear-gradient(270deg, transparent, #007acc); /* Cambiado a un azul más claro */
     animation: animate3 1s linear infinite;
     animation-delay: 0.50s;
 }
 
-@keyframes animate3{
-    0%{
+@keyframes animate3 {
+    0% {
         right: -100%;
     }
-    50%,100%{
+    50%, 100% {
         right: 100%;
     }
 }
-nav a span:nth-child(4){
+
+nav a span:nth-child(4) {
     bottom: -100%; 
     left: 0;
     width: 2px; 
     height: 100%;
-    background: linear-gradient(360deg,transparent,#03e9f4);
+    background: linear-gradient(360deg, transparent, #007acc); /* Cambiado a un azul más claro */
     animation: animate4 1s linear infinite;
     animation-delay: 0.75s;
 }
-@keyframes animate4{
-    0%{ bottom: -100%; }
-    50%,100%{ bottom: 100%; }
+
+@keyframes animate4 {
+    0% { 
+        bottom: -100%; 
+    }
+    50%, 100% { 
+        bottom: 100%; 
+    }
 }
 
 main {
@@ -287,12 +157,12 @@ table {
 }
 
 table, th, td {
-    border: 1px solid #333;
+    border: 1px solid #cccccc; /* Cambiado a un gris más claro */
 }
 
 th {
-    background-color: #222;
-    color: #00f0ff;
+    background-color: #e0e0e0; /* Cambiado a un gris más claro */
+    color: #007acc; /* Cambiado a un azul más claro */
 }
 
 td {
@@ -308,21 +178,21 @@ form input, form select, form button {
     padding: 0.5rem;
     margin-bottom: 1rem;
     width: 100%;
-    background-color: #1c1c1c;
-    border: 1px solid #444;
-    color: #00f0ff;
+    background-color: #f9f9f9; /* Cambiado a un gris muy claro */
+    border: 1px solid #cccccc; /* Cambiado a un gris más claro */
+    color: #000000; /* Cambiado a negro */
 }
 
 form button {
     cursor: pointer;
     border: none;
-    background-color: #00f0ff;
-    color: #000;
+    background-color: #007acc; /* Cambiado a un azul más claro */
+    color: #ffffff; /* Cambiado a blanco */
     transition: background-color 0.3s ease;
 }
 
 form button:hover {
-    background-color: #00c3d6;
+    background-color: #005f99; /* Cambiado a un azul más oscuro */
 }
 
 /* Toast Notifications */
@@ -330,12 +200,12 @@ form button:hover {
     position: fixed;
     bottom: 1rem;
     right: 1rem;
-    background-color: #1c1c1c;
-    color: #00f0ff;
+    background-color: #f9f9f9; /* Cambiado a un gris muy claro */
+    color: #000000; /* Cambiado a negro */
     padding: 1rem;
     border-radius: 5px;
-    border-left: 4px solid #00f0ff;
-    box-shadow: 0 0 10px #00f0ff77;
+    border-left: 4px solid #007acc; /* Cambiado a un azul más claro */
+    box-shadow: 0 0 10px #007acc77; /* Cambiado a un azul más claro */
     z-index: 9999;
 }
 
@@ -348,7 +218,7 @@ form button:hover {
 }
 
 a {
-    color: #00f0ff;
+    color: #007acc; /* Cambiado a un azul más claro */
     text-decoration: none;
     font-weight: bold;
     transition: color 0.2s ease, background-color 0.2s ease;
@@ -357,15 +227,15 @@ a {
 }
 
 a:hover {
-    background-color: #00f0ff22;
-    color: #ffffff;
+    background-color: #007acc22; /* Cambiado a un azul más claro */
+    color: #ffffff; /* Cambiado a blanco */
     text-decoration: none;
 }
 
 /* Enlaces tipo botón */
 a.button {
-    background-color: #00f0ff;
-    color: #000;
+    background-color: #007acc; /* Cambiado a un azul más claro */
+    color: #ffffff; /* Cambiado a blanco */
     padding: 6px 12px;
     border-radius: 4px;
     display: inline-block;
@@ -373,9 +243,10 @@ a.button {
 }
 
 a.button:hover {
-    background-color: #00c3d6;
-    color: #000;
+    background-color: #005f99; /* Cambiado a un azul más oscuro */
+    color: #ffffff; /* Cambiado a blanco */
 }
+
 .pagination {
     margin-top: 1.5rem;
     text-align: center;
@@ -387,23 +258,24 @@ a.button:hover {
     margin: 0 4px;
     padding: 6px 12px;
     border-radius: 4px;
-    background-color: #1f1f1f;
-    color: #00f0ff;
+    background-color: #f0f0f0; /* Cambiado a un gris claro */
+    color: #007acc; /* Cambiado a un azul más claro */
     text-decoration: none;
     transition: background-color 0.2s ease;
 }
 
 .pagination a:hover {
-    background-color: #00f0ff;
-    color: #000;
+    background-color: #007acc; /* Cambiado a un azul más claro */
+    color: #ffffff; /* Cambiado a blanco */
 }
 
 .pagination .active {
-    background-color: #00f0ff;
-    color: #000;
+    background-color: #007acc; /* Cambiado a un azul más claro */
+    color: #ffffff; /* Cambiado a blanco */
     font-weight: bold;
     pointer-events: none;
 }
+
 .movimientos-flex {
     display: flex;
     flex-wrap: wrap;
@@ -420,16 +292,17 @@ a.button:hover {
     width: 100%;
     font-size: 0.9rem;
 }
+
 .atraso-leve {
-    background-color: #55440077;
+    background-color: #d9d90077; /* Cambiado a un amarillo claro */
 }
 
 .atraso-moderado {
-    background-color: #66330099;
+    background-color: #d9a90099; /* Cambiado a un amarillo más oscuro */
 }
 
 .atraso-critico {
-    background-color: #661111cc;
+    background-color: #d90000cc; /* Cambiado a un rojo claro */
 }
 
 /* Estilos para el logo */
@@ -439,3 +312,17 @@ a.button:hover {
     width: 100px;
     height: auto;
 }
+/*.theme-toggle {
+    padding: 8px 16px;
+    background-color: #007acc;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 20px;
+    transition: background-color 0.3s;
+}
+
+.theme-toggle:hover {
+    background-color: #005f99;
+}*/
