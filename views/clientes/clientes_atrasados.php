@@ -55,7 +55,7 @@ require '../../templates/header.php';
                 <td><?= $cliente['ultima_fecha_abono'] ? htmlspecialchars($cliente['ultima_fecha_abono']) : 'N/A' ?></td>
                 <td><?= $cliente['dias_desde_ultimo_abono'] ?></td>
                 <td><?= number_format($cliente['saldo'], 2) ?></td>
-                <td><a href="movimientos.php?cliente_id=<?= $cliente['cliente_id'] ?>">Ver Movimientos</a></td>
+                <td><a href="../movimientos/movimientos.php?cliente_id=<?= $cliente['cliente_id'] ?>">Ver Movimientos</a></td>
             </tr>
         <?php endforeach; ?>
     </tbody>

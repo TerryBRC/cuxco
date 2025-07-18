@@ -1,5 +1,4 @@
-    </main>
-    <script src="../../assets/js/toaster.js"></script>
+</main>
     <script>
     document.addEventListener('DOMContentLoaded', function() {
         const toggleButton = document.getElementById('toggle-theme');
@@ -25,9 +24,18 @@
         }
     });
 </script>
+    <script src="../../assets/js/toaster.js"></script>
     <footer>
         <p>&copy; <?= date('Y'); ?> Cuxco - Electro Hogar</p>
         <p>By TSR</p>
     </footer>
+    <?php if (isset($toast)) echo $toast; ?>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        if (window.toastMsg) {
+            toastr(window.toastMsg.type, window.toastMsg.message);
+        }
+    });
+    </script>
 </body>
 </html>

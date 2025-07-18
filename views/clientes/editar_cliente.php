@@ -20,7 +20,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $_POST['nombre'], $_POST['telefono'], $_POST['direccion'],
         $_POST['cedula'], $_POST['frecuencia_pago'], $cliente_id
     ]);
-    echo "<script>toastr('success', 'Cliente actualizado');</script>";
+        $toast = "<script>window.toastMsg = {type: 'success', message: 'CLIENTE ACTUALIZADO CORRECTAMENTE'};</script>";
+
 }
 
 $title = "Editar Cliente";

@@ -13,7 +13,7 @@ CREATE TABLE clientes (
 CREATE TABLE movimientos (
     id INT AUTO_INCREMENT PRIMARY KEY,
     cliente_id INT NOT NULL,
-    fecha DATE NOT NULL,
+    fecha DATEtime default CURRENT_TIMESTAMP,
     descripcion VARCHAR(255),
     tipo ENUM('cargo', 'abono') NOT NULL,
     monto DECIMAL(10,2) NOT NULL,

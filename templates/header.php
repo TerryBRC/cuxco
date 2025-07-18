@@ -8,7 +8,9 @@
 </head>
 <body>
     <header>
-        <img src="../../assets/images/logo.png" alt="logo.png" class="logo"> 
+        <a href="../clientes/clientes.php">
+            <img src="../../assets/images/logo.png" alt="logo.png" class="logo"> 
+        </a>
         <h1>CUXCO</h1>  
         <nav>
             <a href="../clientes/clientes_atrasados.php">
