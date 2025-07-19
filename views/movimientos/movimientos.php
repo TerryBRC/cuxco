@@ -99,8 +99,7 @@ if (!empty($toast)) {
 }
 ?>
 
-<h1><?= htmlspecialchars($title) ?></h1>
-<h2><strong>Saldo actual:</strong> C$ <?= number_format($saldo, 2) ?> </h2>
+<h1><?= htmlspecialchars($title) ?> | <strong>Saldo actual:</strong> C$ <?= number_format($saldo, 2) ?></h1>
 
 <div class="movimientos-flex">
     <div class="historial">
@@ -110,7 +109,7 @@ if (!empty($toast)) {
             <input type="text" name="q" value="<?= $_GET['q'] ?? '' ?>" placeholder="Descripción">
             <button type="submit">🔍 Filtrar</button>
         </form>
-        <div style="display: flex; gap: 1rem; margin: 1rem 0;">
+        <div style="display: flex;align-items: flex-start;gap: 1rem;align-content: center;justify-content: center;">
             <a href="movimientos.php?cliente_id=<?= $cliente_id ?>" class="button">🔄 Limpiar</a>
             <form method="POST" action="export_excel.php">
                 <input type="hidden" name="cliente_id" value="<?= $cliente_id ?>">

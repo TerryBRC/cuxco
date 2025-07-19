@@ -25,7 +25,7 @@
     });
 </script>
     <script src="../../assets/js/toaster.js"></script>
-    <footer>
+    <footer class="footer">
         <p>&copy; <?= date('Y'); ?> Cuxco - Electro Hogar</p>
         <p>By TSR</p>
     </footer>
