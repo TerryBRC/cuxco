@@ -110,7 +110,7 @@ if (!empty($toast)) {
             <input type="text" name="q" value="<?= $_GET['q'] ?? '' ?>" placeholder="Descripción">
             <button type="submit">🔍 Filtrar</button>
         </form>
-        <div style="display: flex; gap: 1rem; margin: 1rem 0;">
+        <div style="display: flex;gap: 1rem;">
             <a href="movimientos.php?cliente_id=<?= $cliente_id ?>" class="button">🔄 Limpiar</a>
             <form method="POST" action="export_excel.php">
                 <input type="hidden" name="cliente_id" value="<?= $cliente_id ?>">
@@ -128,7 +128,10 @@ if (!empty($toast)) {
             </tr>
             <?php foreach ($movimientos as $m): ?>
                 <tr>
-                    <td><?= $m['fecha'] ?></td>
+                    <td>
+                        <?= $m['fecha'] ?>
+                        <button type="button" class="edit-fecha-btn" data-id="<?= $m['id'] ?>" data-fecha="<?= $m['fecha'] ?>">✏️</button>
+                    </td>
                     <td><?= htmlspecialchars($m['descripcion']) ?></td>
                     <td><?= $m['tipo'] === 'abono' ? 'Abono' : 'Cargo' ?></td>
                     <td><?= number_format($m['monto'], 2) ?></td>
@@ -140,6 +143,7 @@ if (!empty($toast)) {
     <div class="formulario">
         <h3>Nuevo Movimiento</h3>
         <form method="POST">
+
             <label>Descripción:
                 <input name="descripcion" required>
             </label>
@@ -158,5 +162,47 @@ if (!empty($toast)) {
 </div>
 
 <p><a href="../clientes/clientes.php">← Volver a Clientes</a></p>
+
+<!-- Modal para editar fecha -->
+<div id="modal-fecha" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:#0008; z-index:99999; align-items:center; justify-content:center;">
+    <div style="background:#fff; color:#000; padding:2rem; border-radius:8px; min-width:300px; max-width:90vw;">
+        <h3>Editar Fecha de Movimiento</h3>
+        <form id="form-fecha" method="POST" style="display:flex; flex-direction:column; gap:1rem;">
+            <input type="hidden" name="edit_fecha_id" id="edit_fecha_id">
+            <label>Nueva Fecha:
+                <input type="date" name="edit_fecha" id="edit_fecha" required>
+            </label>
+            <div style="display:flex; gap:1rem;">
+                <button type="submit">Guardar</button>
+                <button type="button" onclick="document.getElementById('modal-fecha').style.display='none'">Cancelar</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script>
+document.querySelectorAll('.edit-fecha-btn').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+        document.getElementById('edit_fecha_id').value = btn.dataset.id;
+        document.getElementById('edit_fecha').value = btn.dataset.fecha;
+        document.getElementById('modal-fecha').style.display = 'flex';
+    });
+});
+
+// Ya no se requiere validación de usuario/contraseña
+</script>
+
+<?php
+// Procesar edición de fecha
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['edit_fecha_id'], $_POST['edit_fecha'])) {
+    $id = $_POST['edit_fecha_id'];
+    $nueva_fecha = $_POST['edit_fecha'];
+    $stmt = $pdo->prepare("UPDATE movimientos SET fecha = ? WHERE id = ? AND cliente_id = ?");
+    $stmt->execute([$nueva_fecha, $id, $cliente_id]);
+    echo "<script>window.toastMsg = {type: 'success', message: 'Fecha actualizada'};</script>";
+    // Redirige para evitar doble envío
+    echo "<script>setTimeout(function(){ location.href='movimientos.php?cliente_id=$cliente_id'; }, 1000);</script>";
+}
+?>
 
 <?php require '../../templates/footer.php'; ?>

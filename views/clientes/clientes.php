@@ -34,8 +34,8 @@ require '../../templates/header.php';
 <form method="GET" style="margin-bottom: 1rem;">
     <input type="text" name="q" placeholder="Buscar por nombre o teléfono" value="<?= htmlspecialchars($busqueda) ?>">
     <button type="submit">🔍 Buscar</button>
-</form>
-<a href="cliente_form.php">Nuevo Cliente</a>
+</form>    
+
 <table>
     <tr>
         <th>ID</th>

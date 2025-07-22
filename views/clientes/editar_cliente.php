@@ -20,7 +20,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $_POST['nombre'], $_POST['telefono'], $_POST['direccion'],
         $_POST['cedula'], $_POST['frecuencia_pago'], $cliente_id
     ]);
-        $toast = "<script>window.toastMsg = {type: 'success', message: 'CLIENTE ACTUALIZADO CORRECTAMENTE'};</script>";
+    // CARGAR LOS DATOS ACTUALIZADOS
+    $stmt = $pdo->prepare("SELECT * FROM clientes WHERE id = ?");
+    $stmt->execute([$cliente_id]);
+    $cliente = $stmt->fetch();
+    $toast = "<script>window.toastMsg = {type: 'success', message: 'CLIENTE ACTUALIZADO CORRECTAMENTE'};</script>";
 
 }
 
@@ -31,7 +35,7 @@ require '../../templates/header.php';
 <h2>Editar Cliente</h2>
 <form method="POST">
     <label>Nombre:<input name="nombre" value="<?= htmlspecialchars($cliente['nombre']) ?>" required></label>
-    <label>Teléfono:<input name="telefono" value="<?= htmlspecialchars($cliente['telefono']) ?>" required></label>
+    <label>Teléfono:<input name="telefono" value="<?= htmlspecialchars($cliente['telefono']) ?>"></label>
     <label>Dirección:<input name="direccion" value="<?= htmlspecialchars($cliente['direccion']) ?>"></label>
     <label>Cédula:<input name="cedula" value="<?= htmlspecialchars($cliente['cedula']) ?>"></label>
     <label>Frecuencia:

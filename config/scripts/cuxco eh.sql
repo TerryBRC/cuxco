@@ -74,25 +74,35 @@ END $$
 
 DELIMITER ;
 
-DELIMITER ;
-CREATE VIEW vista_clientes_atrasados AS
+CREATE 
+    ALGORITHM = UNDEFINED 
+    DEFINER = `root`@`%` 
+    SQL SECURITY DEFINER
+VIEW `vista_clientes_atrasados` AS
 SELECT 
     c.id AS cliente_id,
     c.nombre,
     c.telefono,
     c.frecuencia_pago,
     MAX(CASE WHEN m.tipo = 'abono' THEN m.fecha END) AS ultima_fecha_abono,
-    DATEDIFF(CURDATE(), MAX(CASE WHEN m.tipo = 'abono' THEN m.fecha END)) AS dias_desde_ultimo_abono,
-    SUM(CASE WHEN m.tipo = 'cargo' THEN m.monto ELSE -m.monto END) AS saldo
+    DATEDIFF(
+        CURDATE(),
+        IFNULL(MAX(CASE WHEN m.tipo = 'abono' THEN m.fecha END), '1900-01-01')
+    ) AS dias_desde_ultimo_abono,
+    SUM(CASE 
+            WHEN m.tipo = 'cargo' THEN m.monto
+            ELSE -m.monto
+        END) AS saldo
 FROM clientes c
 JOIN movimientos m ON c.id = m.cliente_id
 GROUP BY c.id, c.nombre, c.telefono, c.frecuencia_pago
-HAVING 
-    saldo > 0 AND (
-        (frecuencia_pago = 'semanal' AND dias_desde_ultimo_abono >= 14) OR
-        (frecuencia_pago = 'quincenal' AND dias_desde_ultimo_abono >= 30) OR
-        (frecuencia_pago = 'mensual' AND dias_desde_ultimo_abono >= 45)
-    );
+HAVING saldo > 0
+   AND (
+        (frecuencia_pago = 'semanal' AND dias_desde_ultimo_abono >= 14)
+     OR (frecuencia_pago = 'quincenal' AND dias_desde_ultimo_abono >= 30)
+     OR (frecuencia_pago = 'mensual' AND dias_desde_ultimo_abono >= 45)
+   );
+
 -- datos de prueba
 INSERT INTO clientes (nombre, telefono, direccion, cedula, frecuencia_pago) VALUES
 ('Juan Pérez', '8888-1111', 'Calle Principal 123, Managua', '001-010180-0001A', 'mensual'),

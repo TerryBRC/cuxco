@@ -20,6 +20,13 @@
                 <span></span>
                 Clientes Atrasados
             </a>
+            <a href="../clientes/cliente_form.php">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                Nuevo Cliente
+            </a>
             <button id="toggle-theme">Modo Oscuro</button> <!-- Botón para cambiar de tema -->
         </nav>
     </header>

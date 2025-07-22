@@ -16,7 +16,7 @@ require '../../templates/header.php';
 <h2>Registrar Nuevo Cliente</h2>
 <form method="POST">
     <label>Nombre:<input name="nombre" required></label><br>
-    <label>Teléfono:<input name="telefono" required></label><br>
+    <label>Teléfono:<input class="tel" name="telefono"></label><br>
     <label>Dirección:<input name="direccion"></label><br>
     <label>Cédula:<input name="cedula"></label><br>
     <label>Frecuencia:
