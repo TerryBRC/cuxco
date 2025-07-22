@@ -99,8 +99,7 @@ if (!empty($toast)) {
 }
 ?>
 
-<h1><?= htmlspecialchars($title) ?></h1>
-<h2><strong>Saldo actual:</strong> C$ <?= number_format($saldo, 2) ?> </h2>
+<h1><?= htmlspecialchars($title) ?> | <strong>Saldo actual:</strong> C$ <?= number_format($saldo, 2) ?></h1>
 
 <div class="movimientos-flex">
     <div class="historial">
