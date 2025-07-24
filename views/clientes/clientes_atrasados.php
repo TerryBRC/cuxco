@@ -32,7 +32,6 @@ if (!$clientes_atrasados) {
 
 require '../../templates/header.php';
 ?>
-<h2><?= htmlspecialchars($title) ?></h2>
 
 <table class="table table-striped">
     <thead>

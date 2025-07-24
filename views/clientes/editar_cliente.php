@@ -36,7 +36,7 @@ require '../../templates/header.php';
 <form method="POST">
     <label>Nombre:<input name="nombre" value="<?= htmlspecialchars($cliente['nombre']) ?>" required></label>
     <label>Teléfono:<input name="telefono" value="<?= htmlspecialchars($cliente['telefono']) ?>"></label>
-    <label>Dirección:<input name="direccion" value="<?= htmlspecialchars($cliente['direccion']) ?>"></label>
+    <label>N°. Páginas:<input name="direccion" value="<?= htmlspecialchars($cliente['direccion']) ?>"></label>
     <label>Cédula:<input name="cedula" value="<?= htmlspecialchars($cliente['cedula']) ?>"></label>
     <label>Frecuencia:
         <select name="frecuencia_pago">

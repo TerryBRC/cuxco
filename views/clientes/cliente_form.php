@@ -15,17 +15,25 @@ require '../../templates/header.php';
 ?>
 <h2>Registrar Nuevo Cliente</h2>
 <form method="POST">
-    <label>Nombre:<input name="nombre" required></label><br>
-    <label>Teléfono:<input class="tel" name="telefono"></label><br>
-    <label>Dirección:<input name="direccion"></label><br>
-    <label>Cédula:<input name="cedula"></label><br>
-    <label>Frecuencia:
+    <div>
+        <label>Nombre:<input name="nombre" required></label><br>
+    </div>
+    <div style="display: flex;gap: 1rem;">
+        <label>Teléfono:<input class="tel" name="telefono"></label><br>
+    <label>N°. Páginas:<input name="direccion"></label><br>
+    </div>
+    <div style="display: flex;gap: 1rem;">
+        <label>Cédula:<input name="cedula"></label><br>
+        <label>Frecuencia:
         <select name="frecuencia_pago">
             <option value="semanal">Semanal</option>
             <option value="quincenal">Quincenal</option>
             <option value="mensual">Mensual</option>
         </select>
-    </label><br>
+    </label>
+    <br>
+    </div>
+    
     <button type="submit">Guardar</button>
 </form>
 <?php require '../../templates/footer.php'; ?>

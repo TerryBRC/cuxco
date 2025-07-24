@@ -27,13 +27,15 @@ $stmt->execute($params);
 $clientes = $stmt->fetchAll();
 
 $title = 'Clientes';
+$ventana = 'Lista de Clientes';
 require '../../templates/header.php';
 ?>
-
-<h2>Clientes</h2>
 <form method="GET" style="margin-bottom: 1rem;">
-    <input type="text" name="q" placeholder="Buscar por nombre o teléfono" value="<?= htmlspecialchars($busqueda) ?>">
+    <div style="display: flex; gap: 1rem;">
+        <input type="text" name="q" placeholder="Buscar por nombre o teléfono" value="<?= htmlspecialchars($busqueda) ?>">
     <button type="submit">🔍 Buscar</button>
+    </div>
+    
 </form>    
 
 <table>
@@ -47,7 +49,7 @@ require '../../templates/header.php';
     <?php foreach($clientes as $c): ?>
     <tr>
         <td><?= $c['id']; ?></td>
-        <td><?= htmlspecialchars($c['nombre']); ?></td>
+        <td><?= htmlspecialchars($c['nombre']). " - " . htmlspecialchars($c['direccion']); ?></td>
         <td><?= htmlspecialchars($c['telefono']); ?></td>
         <td><?= htmlspecialchars($c['frecuencia_pago']); ?></td>
         <td>
